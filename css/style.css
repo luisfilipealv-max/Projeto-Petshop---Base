@@ -7,7 +7,18 @@
 --sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
 --radius: 20px;
 }
-
+@media (prefers-color-scheme: dark) {
+:root{
+--prinaria: #D4AF37;
+--segundaria:--#2b9950;
+--escuro:#000000;
+--claro:#000000;
+--texto:#ffffff;
+--sombra: 0 8px 30px rgba(0, 0, 0, 0.2);
+--radius: 20px;
+--gradientBody: rgba(79, 79, 70, 0.85), rgba(122, 122, 122, 0.91);
+}
+}
 * {
 margin: 0;
 padding: 0;
@@ -59,7 +70,7 @@ transition: 0.3s;
 }
 
 nav a:hover {
-color: var(--secundaria);
+color: var(--primaria);
 }
 
 #menu-btn {
@@ -218,11 +229,11 @@ transition: 0.4s;
 }
 
 button:hover {
-background: #026fa6;
+background: var(--primaria);
 }
 /* RODAPE */
 footer {
-background: var(--escuro);
+background: #0c3b1c;
 color: var(--claro);
 text-align: center;
 padding: 50px 20px;
@@ -312,4 +323,104 @@ color: var(--secundaria);
   font-size: 18px;
   max-width: 900px;
   box-shadow: var(--sombra);
+}
+/* =========================
+   DARK MODE
+========================= */
+
+.dark-mode {
+  color: #f5f5f5;
+
+  background:
+  linear-gradient(rgba(18,18,18,0.95), rgba(18,18,18,0.95)),
+  url("../img/fundo.png");
+
+  background-attachment: fixed;
+  background-size: 500px;
+}
+
+/* HEADER */
+.dark-mode header {
+  background: rgba(4, 99, 7, 0.9);
+}
+
+/* LINKS */
+.dark-mode nav a {
+  color: white;
+}
+
+/* TITULOS */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode span {
+  color: #f5f5f5;
+}
+
+/* HERO */
+.dark-mode .hero {
+  background:
+  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("../img/banner.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* CARDS */
+.dark-mode .card {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+.dark-mode .card p {
+  color: rgba(4, 99, 7, 0.9);
+}
+
+/* FORMULARIO */
+.dark-mode form {
+  background: #1e1e1e;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background: #2a2a2a;
+  color: rgba(4, 99, 7, 0.9);
+  border: 1px solid #444;
+}
+
+/* FOOTER */
+.dark-mode footer {
+  background: #0a0a0a;
+}
+
+/* MENU MOBILE */
+.dark-mode nav.ativo {
+  background: #1e1e1e;
+}
+
+/* BOTÃO DARK MODE */
+#darkModeBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #D4AF37;
+  color: black;
+
+  cursor: pointer;
+  font-size: 18px;
+
+  transition: 0.3s;
+  z-index: 99999;
+}
+
+#darkModeBtn:hover {
+  transform: scale(1.1);
 }
